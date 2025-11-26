@@ -12,9 +12,9 @@ const LandingPage = ({ onGetStarted }) => {
 
     useEffect(() => {
         const targets = {
-            students: 15000,
+            students: 150,
             success: 94,
-            companies: 500,
+            companies: 50,
             crackscore: 845
         };
 
@@ -109,9 +109,9 @@ const LandingPage = ({ onGetStarted }) => {
                         <div className="font-mono text-neo-green text-sm space-y-2">
                             <p>&gt; initializing_brain...</p>
                             <p>&gt; scanning_job_market...</p>
-                            <p>&gt; target: GOOGLE_L4</p>
+                            <p>&gt; target: YOUR DREAM COMPANY</p>
                             <p>&gt; generating_roadmap... [100%]</p>
-                            <p className="animate-pulse">&gt; READY_TO_DEPLOY_</p>
+                            <p className="animate-pulse">&gt; READY_TO_GET_PLACED_</p>
                             <div className="mt-4 p-2 border border-neo-green bg-neo-green/10">
                                 <p className="font-bold">STATUS: PASS</p>
                             </div>
@@ -130,47 +130,57 @@ const LandingPage = ({ onGetStarted }) => {
             </div>
 
             {/* Features Section */}
-            <section id="features" className="py-20 px-4 bg-neo-white border-b-4 border-neo-black overflow-hidden">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <section id="features" className="py-20 px-4 bg-neo-white overflow-hidden">
+                <div className="max-w-7xl mx-auto">
+                    <h2 className="font-display text-4xl md:text-6xl mb-16 uppercase text-center">
+                        CORE <span className="bg-neo-green px-2">FEATURES</span>
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
 
-                    {/* Card 1 */}
-                    <div className="bg-white border-4 border-neo-black p-6 shadow-neo transform -rotate-2 hover:rotate-0 transition-transform duration-300">
-                        <div className="bg-neo-green w-12 h-12 flex items-center justify-center border-2 border-neo-black mb-4">
-                            <Compass className="w-8 h-8" />
+                        {/* Card 1 */}
+                        <div className="bg-white border-4 border-neo-black p-6 shadow-neo transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                            <div className="bg-neo-green w-12 h-12 flex items-center justify-center border-2 border-neo-black mb-4">
+                                <Compass className="w-8 h-8" />
+                            </div>
+                            <h3 className="font-display text-2xl mb-2 uppercase">AI Roadmap</h3>
+                            <p className="font-mono text-sm leading-relaxed">
+                                Navigate your career with precision. Custom paths generated instantly.
+                            </p>
                         </div>
-                        <h3 className="font-display text-2xl mb-2 uppercase">AI Roadmap</h3>
-                        <p className="font-mono text-sm leading-relaxed">
-                            Navigate your career with precision. Custom paths generated instantly.
-                        </p>
+
+                        {/* Card 2 */}
+                        <div className="bg-white border-4 border-neo-black p-6 shadow-neo transform rotate-1 hover:rotate-0 transition-transform duration-300 z-10">
+                            <div className="bg-neo-green w-12 h-12 flex items-center justify-center border-2 border-neo-black mb-4">
+                                <Mic className="w-8 h-8" />
+                            </div>
+                            <h3 className="font-display text-2xl mb-2 uppercase">Interview Simulator</h3>
+                            <p className="font-mono text-sm leading-relaxed">
+                                Speak to the AI. Get roasted. Get better. Real-time feedback loop.
+                            </p>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div className="bg-white border-4 border-neo-black p-6 shadow-neo transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                            <div className="bg-neo-green w-12 h-12 flex items-center justify-center border-2 border-neo-black mb-4">
+                                <Search className="w-8 h-8" />
+                            </div>
+                            <h3 className="font-display text-2xl mb-2 uppercase">Company Intel</h3>
+                            <p className="font-mono text-sm leading-relaxed">
+                                Deep dive into company patterns. Know the enemy before you fight.
+                            </p>
+                        </div>
+
                     </div>
 
-                    {/* Card 2 */}
-                    <div className="bg-white border-4 border-neo-black p-6 shadow-neo transform rotate-1 hover:rotate-0 transition-transform duration-300 z-10">
-                        <div className="bg-neo-green w-12 h-12 flex items-center justify-center border-2 border-neo-black mb-4">
-                            <Mic className="w-8 h-8" />
-                        </div>
-                        <h3 className="font-display text-2xl mb-2 uppercase">Interview Simulator</h3>
-                        <p className="font-mono text-sm leading-relaxed">
-                            Speak to the AI. Get roasted. Get better. Real-time feedback loop.
-                        </p>
+                    {/* Shorter divider */}
+                    <div className="flex justify-center mt-16">
+                        <div className="w-3/4 h-1 bg-neo-black"></div>
                     </div>
-
-                    {/* Card 3 */}
-                    <div className="bg-white border-4 border-neo-black p-6 shadow-neo transform -rotate-1 hover:rotate-0 transition-transform duration-300">
-                        <div className="bg-neo-green w-12 h-12 flex items-center justify-center border-2 border-neo-black mb-4">
-                            <Search className="w-8 h-8" />
-                        </div>
-                        <h3 className="font-display text-2xl mb-2 uppercase">Company Intel</h3>
-                        <p className="font-mono text-sm leading-relaxed">
-                            Deep dive into company patterns. Know the enemy before you fight.
-                        </p>
-                    </div>
-
                 </div>
             </section>
 
             {/* How It Works Section - NEW */}
-            <section className="py-20 px-4 bg-neo-white border-b-4 border-neo-black">
+            <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="font-display text-4xl md:text-6xl mb-16 uppercase text-center">
                         HOW IT <span className="bg-neo-green px-2">WORKS</span>
@@ -233,10 +243,14 @@ const LandingPage = ({ onGetStarted }) => {
                         </div>
                     </div>
                 </div>
+                {/* Shorter divider */}
+                <div className="flex justify-center mt-16">
+                    <div className="w-3/4 h-1 bg-neo-black"></div>
+                </div>
             </section>
 
             {/* Key Metrics Section - NEW */}
-            <section className="py-20 px-4 bg-white border-b-4 border-neo-black">
+            <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="font-display text-4xl md:text-6xl mb-12 uppercase text-center">
                         PROVEN <span className="bg-neo-green px-2">RESULTS</span>
@@ -284,78 +298,195 @@ const LandingPage = ({ onGetStarted }) => {
                         </div>
                     </div>
                 </div>
+                {/* Shorter divider */}
+                <div className="flex justify-center mt-16">
+                    <div className="w-3/4 h-1 bg-neo-black"></div>
+                </div>
             </section>
 
-            {/* Feature Comparison Table - NEW */}
-            <section className="py-20 px-4 bg-white border-b-4 border-neo-black">
+            {/* Feature Comparison Table - DOODLE STYLE */}
+            <section className="py-20 px-4">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="font-display text-4xl md:text-6xl mb-12 uppercase text-center">
                         WHY <span className="bg-neo-green px-2">CODIFYME?</span>
                     </h2>
 
                     <div className="overflow-x-auto">
-                        <table className="w-full border-4 border-neo-black">
-                            <thead>
-                                <tr className="bg-neo-black text-neo-white">
-                                    <th className="p-4 text-left font-mono border-r-4 border-neo-green">FEATURE</th>
-                                    <th className="p-4 text-center font-mono border-r-4 border-neo-green">TRADITIONAL PREP</th>
-                                    <th className="p-4 text-center font-mono bg-neo-green text-neo-black">CODIFYME</th>
-                                </tr>
-                            </thead>
-                            <tbody className="font-mono text-sm">
-                                <tr className="border-b-4 border-neo-black bg-white">
-                                    <td className="p-4 font-bold border-r-4 border-neo-black">Personalized Roadmap</td>
-                                    <td className="p-4 text-center border-r-4 border-neo-black">
-                                        <X className="w-6 h-6 mx-auto text-red-500" />
-                                    </td>
-                                    <td className="p-4 text-center bg-neo-green/20">
-                                        <Check className="w-6 h-6 mx-auto text-green-600 font-bold" />
-                                    </td>
-                                </tr>
-                                <tr className="border-b-4 border-neo-black bg-gray-50">
-                                    <td className="p-4 font-bold border-r-4 border-neo-black">AI Mock Interviews</td>
-                                    <td className="p-4 text-center border-r-4 border-neo-black">
-                                        <span className="text-gray-500">Limited</span>
-                                    </td>
-                                    <td className="p-4 text-center bg-neo-green/20">
-                                        <Check className="w-6 h-6 mx-auto text-green-600 font-bold" />
-                                    </td>
-                                </tr>
-                                <tr className="border-b-4 border-neo-black bg-white">
-                                    <td className="p-4 font-bold border-r-4 border-neo-black">Company Intelligence</td>
-                                    <td className="p-4 text-center border-r-4 border-neo-black">
-                                        <span className="text-gray-500">Hours of Research</span>
-                                    </td>
-                                    <td className="p-4 text-center bg-neo-green/20">
-                                        <Check className="w-6 h-6 mx-auto text-green-600 font-bold" />
-                                    </td>
-                                </tr>
-                                <tr className="border-b-4 border-neo-black bg-gray-50">
-                                    <td className="p-4 font-bold border-r-4 border-neo-black">Real-time Feedback</td>
-                                    <td className="p-4 text-center border-r-4 border-neo-black">
-                                        <X className="w-6 h-6 mx-auto text-red-500" />
-                                    </td>
-                                    <td className="p-4 text-center bg-neo-green/20">
-                                        <Check className="w-6 h-6 mx-auto text-green-600 font-bold" />
-                                    </td>
-                                </tr>
-                                <tr className="bg-white">
-                                    <td className="p-4 font-bold border-r-4 border-neo-black">CrackScore Tracking</td>
-                                    <td className="p-4 text-center border-r-4 border-neo-black">
-                                        <X className="w-6 h-6 mx-auto text-red-500" />
-                                    </td>
-                                    <td className="p-4 text-center bg-neo-green/20">
-                                        <Check className="w-6 h-6 mx-auto text-green-600 font-bold" />
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        {/* Doodle Table Container */}
+                        <div className="relative p-8 bg-white" style={{
+                            clipPath: 'polygon(1% 3%, 3% 1%, 8% 2%, 15% 1%, 22% 3%, 30% 1%, 38% 2%, 46% 1%, 54% 3%, 62% 2%, 70% 1%, 78% 2%, 85% 1%, 92% 3%, 97% 2%, 99% 7%, 98% 15%, 99% 23%, 97% 31%, 99% 39%, 98% 47%, 99% 55%, 97% 63%, 98% 71%, 99% 79%, 97% 87%, 99% 93%, 96% 98%, 88% 97%, 80% 99%, 72% 98%, 64% 99%, 56% 97%, 48% 99%, 40% 98%, 32% 99%, 24% 97%, 16% 98%, 8% 99%, 3% 96%)',
+                            border: '4px solid #000',
+                            boxShadow: '8px 8px 0px rgba(0,0,0,0.3)'
+                        }}>
+                            <table className="w-full">
+                                <thead>
+                                    <tr>
+                                        <th className="p-4 text-left font-black text-lg relative">
+                                            <div className="transform -rotate-1">FEATURE</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '3,5' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </th>
+                                        <th className="p-4 text-center font-black text-lg relative bg-red-100">
+                                            <div className="transform rotate-1">OLD WAY</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '3,5' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </th>
+                                        <th className="p-4 text-center font-black text-lg relative bg-neo-green">
+                                            <div className="transform -rotate-1">CODIFYME</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '3,5' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody className="font-mono text-sm">
+                                    {/* Row 1 */}
+                                    <tr className="relative">
+                                        <td className="p-4 font-bold relative">
+                                            <div className="transform rotate-1">Personalized Roadmap</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-red-50">
+                                            <div className="inline-block transform -rotate-3 relative">
+                                                <X className="w-8 h-8 text-red-500" strokeWidth={3} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">NAH</div>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-green-50">
+                                            <div className="inline-block transform rotate-2 relative">
+                                                <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">YEP!</div>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                    </tr>
+
+                                    {/* Row 2 */}
+                                    <tr className="relative">
+                                        <td className="p-4 font-bold relative">
+                                            <div className="transform -rotate-1">AI Mock Interviews</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-red-50">
+                                            <div className="transform rotate-2">
+                                                <span className="inline-block px-3 py-1 bg-gray-200 border-2 border-neo-black transform -rotate-1 font-semibold text-xs">
+                                                    MAYBE 3?
+                                                </span>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-green-50">
+                                            <div className="inline-block transform -rotate-1 relative">
+                                                <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">∞</div>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                    </tr>
+
+                                    {/* Row 3 */}
+                                    <tr className="relative">
+                                        <td className="p-4 font-bold relative">
+                                            <div className="transform rotate-1">Company Intelligence</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-red-50">
+                                            <div className="transform -rotate-2">
+                                                <span className="inline-block px-3 py-1 bg-gray-200 border-2 border-neo-black transform rotate-1 font-semibold text-xs">
+                                                    GOOGLE IT
+                                                </span>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-green-50">
+                                            <div className="inline-block transform rotate-2 relative">
+                                                <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">500+</div>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                    </tr>
+
+                                    {/* Row 4 */}
+                                    <tr className="relative">
+                                        <td className="p-4 font-bold relative">
+                                            <div className="transform -rotate-1">Real-time Feedback</div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-red-50">
+                                            <div className="inline-block transform rotate-3 relative">
+                                                <X className="w-8 h-8 text-red-500" strokeWidth={3} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">NAH</div>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-green-50">
+                                            <div className="inline-block transform -rotate-2 relative">
+                                                <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">LIVE!</div>
+                                            </div>
+                                            <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
+                                                <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
+                                            </svg>
+                                        </td>
+                                    </tr>
+
+                                    {/* Row 5 */}
+                                    <tr className="relative">
+                                        <td className="p-4 font-bold relative">
+                                            <div className="transform rotate-1">CrackScore Tracking</div>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-red-50">
+                                            <div className="inline-block transform -rotate-2 relative">
+                                                <X className="w-8 h-8 text-red-500" strokeWidth={3} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">NOPE</div>
+                                            </div>
+                                        </td>
+                                        <td className="p-4 text-center relative bg-green-50">
+                                            <div className="inline-block transform rotate-1 relative">
+                                                <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
+                                                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">YEAH!</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+                </div>
+                {/* Shorter divider */}
+                <div className="flex justify-center mt-16">
+                    <div className="w-3/4 h-1 bg-neo-black"></div>
                 </div>
             </section>
 
             {/* Testimonials Section - NEW */}
-            <section className="py-20 px-4 bg-neo-white border-b-4 border-neo-black overflow-hidden">
+            <section className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="font-display text-4xl md:text-6xl mb-16 uppercase text-center">
                         SUCCESS <span className="bg-neo-green px-2">STORIES</span>
@@ -414,10 +545,14 @@ const LandingPage = ({ onGetStarted }) => {
                         </div>
                     </div>
                 </div>
+                {/* Shorter divider */}
+                <div className="flex justify-center mt-16">
+                    <div className="w-3/4 h-1 bg-neo-black"></div>
+                </div>
             </section>
 
             {/* Our Team Section - NEW */}
-            <section id="team" className="py-20 px-4 bg-white border-b-4 border-neo-black">
+            <section id="team" className="py-20 px-4">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="font-display text-4xl md:text-6xl mb-16 uppercase text-center">
                         MEET THE <span className="bg-neo-green px-2">TEAM</span>
@@ -427,11 +562,11 @@ const LandingPage = ({ onGetStarted }) => {
                         {/* Team Member 1 */}
                         <div className="bg-white border-4 border-neo-black p-6 shadow-neo hover:rotate-3 hover:-translate-y-2 transition-all">
                             <div className="w-full h-64 bg-neo-black border-4 border-neo-black mb-4 overflow-hidden">
-                                <img src="/api/placeholder/300/400" alt="Team member" className="w-full h-full object-cover grayscale" />
+                                <img src="/team/nishant.png" alt="Team member" className="w-full h-full object-cover grayscale" />
                             </div>
-                            <h3 className="font-bold text-xl mb-1">Aarav Kumar</h3>
-                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">Founder & CEO</p>
-                            <p className="font-mono text-xs mb-4">Ex-Google SWE • IIT Delhi</p>
+                            <h3 className="font-bold text-xl mb-1">Kumar Nishant</h3>
+                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">Lead Developer</p>
+                            <p className="font-mono text-xs mb-4">• JISCE</p>
                             <div className="flex gap-3">
                                 <a href="#" className="hover:scale-110 transition-transform">
                                     <Linkedin className="w-5 h-5" />
@@ -448,11 +583,11 @@ const LandingPage = ({ onGetStarted }) => {
                         {/* Team Member 2 */}
                         <div className="bg-white border-4 border-neo-black p-6 shadow-neo hover:-rotate-3 hover:-translate-y-2 transition-all">
                             <div className="w-full h-64 bg-neo-black border-4 border-neo-black mb-4 overflow-hidden">
-                                <img src="/api/placeholder/300/400" alt="Team member" className="w-full h-full object-cover grayscale" />
+                                <img src="/team/gauravv.png" alt="Team member" className="w-full h-full object-cover grayscale" />
                             </div>
-                            <h3 className="font-bold text-xl mb-1">Ishita Singh</h3>
-                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">CTO & Co-Founder</p>
-                            <p className="font-mono text-xs mb-4">Ex-Microsoft • ML Expert</p>
+                            <h3 className="font-bold text-xl mb-1">Gaurav Shaw</h3>
+                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">AI/ML Specialist</p>
+                            <p className="font-mono text-xs mb-4"> • JISCE</p>
                             <div className="flex gap-3">
                                 <a href="#" className="hover:scale-110 transition-transform">
                                     <Linkedin className="w-5 h-5" />
@@ -469,11 +604,11 @@ const LandingPage = ({ onGetStarted }) => {
                         {/* Team Member 3 */}
                         <div className="bg-white border-4 border-neo-black p-6 shadow-neo hover:rotate-3 hover:-translate-y-2 transition-all">
                             <div className="w-full h-64 bg-neo-black border-4 border-neo-black mb-4 overflow-hidden">
-                                <img src="/api/placeholder/300/400" alt="Team member" className="w-full h-full object-cover grayscale" />
+                                <img src="/team/gouravvv.png" alt="Team member" className="w-full h-full object-cover grayscale" />
                             </div>
-                            <h3 className="font-bold text-xl mb-1">Rohan Verma</h3>
-                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">Head of Product</p>
-                            <p className="font-mono text-xs mb-4">Ex-Amazon • IIT Bombay</p>
+                            <h3 className="font-bold text-xl mb-1">Gourav Modak</h3>
+                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">UI/UX Developer</p>
+                            <p className="font-mono text-xs mb-4">• JISCE</p>
                             <div className="flex gap-3">
                                 <a href="#" className="hover:scale-110 transition-transform">
                                     <Linkedin className="w-5 h-5" />
@@ -490,11 +625,11 @@ const LandingPage = ({ onGetStarted }) => {
                         {/* Team Member 4 */}
                         <div className="bg-white border-4 border-neo-black p-6 shadow-neo hover:-rotate-3 hover:-translate-y-2 transition-all">
                             <div className="w-full h-64 bg-neo-black border-4 border-neo-black mb-4 overflow-hidden">
-                                <img src="/api/placeholder/300/400" alt="Team member" className="w-full h-full object-cover grayscale" />
+                                <img src="/team/mdd.png" alt="Team member" className="w-full h-full object-cover grayscale" />
                             </div>
-                            <h3 className="font-bold text-xl mb-1">Kavya Reddy</h3>
-                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">Lead Designer</p>
-                            <p className="font-mono text-xs mb-4">Ex-Meta • Design Systems</p>
+                            <h3 className="font-bold text-xl mb-1">Md. Moazzam</h3>
+                            <p className="font-mono text-sm mb-3 uppercase text-gray-700">Content & Research</p>
+                            <p className="font-mono text-xs mb-4">• JISCE</p>
                             <div className="flex gap-3">
                                 <a href="#" className="hover:scale-110 transition-transform">
                                     <Linkedin className="w-5 h-5" />
@@ -546,7 +681,7 @@ const LandingPage = ({ onGetStarted }) => {
                         <div className="bg-white border-4 border-neo-black p-8 shadow-neo hover:-translate-y-2 transition-all">
                             <div className="text-center mb-6">
                                 <h3 className="font-display text-3xl mb-2">FREE</h3>
-                                <div className="font-mono text-5xl font-bold mb-2">$0</div>
+                                <div className="font-mono text-5xl font-bold mb-2">₹0</div>
                                 <p className="font-mono text-sm text-gray-600">forever</p>
                             </div>
                             <ul className="space-y-4 mb-8 font-mono text-sm">
@@ -582,7 +717,7 @@ const LandingPage = ({ onGetStarted }) => {
                             </div>
                             <div className="text-center mb-6">
                                 <h3 className="font-display text-3xl mb-2">PRO</h3>
-                                <div className="font-mono text-5xl font-bold mb-2">$29</div>
+                                <div className="font-mono text-5xl font-bold mb-2">₹49</div>
                                 <p className="font-mono text-sm text-gray-700">/month</p>
                             </div>
                             <ul className="space-y-4 mb-8 font-mono text-sm">
@@ -619,37 +754,37 @@ const LandingPage = ({ onGetStarted }) => {
                             </button>
                         </div>
 
-                        {/* Enterprise Tier */}
+                        {/* Premium Tier */}
                         <div className="bg-white border-4 border-neo-black p-8 shadow-neo hover:-translate-y-2 transition-all">
                             <div className="text-center mb-6">
-                                <h3 className="font-display text-3xl mb-2">ENTERPRISE</h3>
-                                <div className="font-mono text-3xl font-bold mb-2">CUSTOM</div>
-                                <p className="font-mono text-sm text-gray-600">for colleges</p>
+                                <h3 className="font-display text-3xl mb-2">PREMIUM</h3>
+                                <div className="font-mono text-5xl font-bold mb-2">₹199</div>
+                                <p className="font-mono text-sm text-gray-600">/month</p>
                             </div>
                             <ul className="space-y-4 mb-8 font-mono text-sm">
                                 <li className="flex items-start gap-2">
                                     <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                    <span>Bulk Student Licenses</span>
+                                    <span><strong>Everything in Pro</strong></span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                    <span>Custom Branding</span>
+                                    <span>1-on-1 Career Coaching</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                    <span>Analytics Dashboard</span>
+                                    <span>Mock Interview with Experts</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                    <span>Dedicated Support</span>
+                                    <span>Salary Negotiation Guide</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                                    <span>API Access</span>
+                                    <span>Exclusive Referrals</span>
                                 </li>
                             </ul>
                             <button className="w-full py-3 bg-white border-4 border-neo-black font-bold hover:bg-gray-100 transition-colors">
-                                [ CONTACT US ]
+                                [ GET PREMIUM ]
                             </button>
                         </div>
                     </div>
@@ -709,21 +844,39 @@ const LandingPage = ({ onGetStarted }) => {
 
                         {/* Right - Phone Mockup */}
                         <div className="relative">
-                            <div className="relative mx-auto w-64 h-[500px] bg-neo-black border-8 border-neo-green rounded-3xl p-4 shadow-[12px_12px_0px_0px_#39FF14] transform rotate-6 hover:rotate-0 transition-all">
-                                <div className="w-full h-full bg-neo-green/20 border-2 border-neo-green rounded-2xl flex items-center justify-center">
-                                    <div className="text-center">
-                                        <Terminal className="w-16 h-16 text-neo-green mx-auto mb-4" />
-                                        <p className="font-mono text-neo-green">MOBILE APP</p>
-                                        <p className="font-mono text-xs text-neo-green mt-2">PREVIEW</p>
-                                    </div>
+                            <div className="relative mx-auto w-auto max-w-lg transform rotate-6 hover:rotate-0 transition-all">
+                                <img
+                                    src="/phone.png"
+                                    alt="CodifyMe Mobile App Preview"
+                                    className="w-full h-auto "
+                                />
+                            </div>
+                            {/* Floating elements - Doodle Style */}
+                            <div className="absolute -top-[-70px] -right-[-70px] animate-bounce doodle-badge">
+                                <div className="relative bg-yellow-400 px-5 py-2 font-black text-base rotate-12"
+                                    style={{
+                                        clipPath: 'polygon(2% 8%, 8% 2%, 18% 3%, 28% 1%, 38% 4%, 48% 2%, 58% 3%, 68% 1%, 78% 4%, 88% 2%, 96% 6%, 98% 16%, 97% 26%, 99% 36%, 96% 46%, 98% 56%, 97% 66%, 99% 76%, 96% 86%, 98% 94%, 90% 98%, 80% 96%, 70% 98%, 60% 96%, 50% 98%, 40% 96%, 30% 98%, 20% 97%, 10% 98%, 4% 92%)',
+                                        filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'
+                                    }}>
+                                    <span className="relative z-10">iOS</span>
+                                    <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ strokeDasharray: '5,3' }}>
+                                        <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)"
+                                            fill="none" stroke="#000" strokeWidth="3" />
+                                    </svg>
                                 </div>
                             </div>
-                            {/* Floating elements */}
-                            <div className="absolute -top-4 -right-4 bg-yellow-300 border-4 border-neo-black px-4 py-2 font-bold text-sm rotate-12 shadow-neo animate-bounce">
-                                iOS
-                            </div>
-                            <div className="absolute -bottom-4 -left-4 bg-cyan-300 border-4 border-neo-black px-4 py-2 font-bold text-sm -rotate-12 shadow-neo animate-bounce" style={{ animationDelay: '0.5s' }}>
-                                Android
+                            <div className="absolute -bottom-[-70px] -left-4 animate-bounce doodle-badge" style={{ animationDelay: '0.5s' }}>
+                                <div className="relative bg-cyan-600 px-5 py-2 font-black text-base -rotate-12"
+                                    style={{
+                                        clipPath: 'polygon(3% 6%, 7% 3%, 17% 2%, 27% 4%, 37% 1%, 47% 3%, 57% 2%, 67% 4%, 77% 1%, 87% 3%, 95% 8%, 97% 18%, 98% 28%, 96% 38%, 98% 48%, 96% 58%, 98% 68%, 96% 78%, 97% 88%, 94% 96%, 84% 98%, 74% 96%, 64% 98%, 54% 96%, 44% 98%, 34% 97%, 24% 98%, 14% 96%, 6% 94%, 2% 84%)',
+                                        filter: 'drop-shadow(3px 3px 0px rgba(0,0,0,0.8))'
+                                    }}>
+                                    <span className="relative z-10">Android</span>
+                                    <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ strokeDasharray: '5,3' }}>
+                                        <rect x="2" y="2" width="calc(100% - 4px)" height="calc(100% - 4px)"
+                                            fill="none" stroke="#000" strokeWidth="3" />
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
