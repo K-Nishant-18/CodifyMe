@@ -7,14 +7,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        'neo-bg': '#f0f0f0',
-        'neo-main': '#c4a7e7', // Soft purple
-        'neo-accent': '#eb6f92', // Pink
-        'neo-dark': '#191724',
+        'neo-white': '#FFFFFF',
+        'neo-black': '#000000',
+        'neo-green': '#39FF14',
+        // Legacy/Mapped colors for compatibility
+        'neo-bg': '#FFFFFF', // Mapped to white
+        'neo-main': '#39FF14', // Mapped to Green
+        'neo-accent': '#000000', // Mapped to Black for high contrast
+        'neo-dark': '#000000',
         'neo-border': '#000000',
       },
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Archivo Black', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
+      },
       boxShadow: {
-        'neo': '5px 5px 0px 0px rgba(0,0,0,1)',
+        'neo': '8px 8px 0px 0px rgba(0,0,0,1)',
+        'neo-sm': '4px 4px 0px 0px rgba(0,0,0,1)',
       },
     },
   },

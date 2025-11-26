@@ -13,5 +13,5 @@ public interface DailyTaskRepository extends JpaRepository<DailyTask, Long> {
 
     List<DailyTask> findByRoadmapIdOrderByDayNumberAsc(Long roadmapId);
 
-    Long countByRoadmapIdAndIsCompletedTrue(Long roadmapId);
+    Long countByRoadmapIdAndCompletedTrue(Long roadmapId);
 }

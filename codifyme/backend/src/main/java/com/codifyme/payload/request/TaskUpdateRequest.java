@@ -7,5 +7,5 @@ import lombok.Data;
 public class TaskUpdateRequest {
 
     @NotNull(message = "Completion status is required")
-    private Boolean isCompleted;
+    private Boolean completed;
 }

@@ -11,12 +11,13 @@ const roadmapService = {
         return response.data;
     },
 
-    async generateRoadmap(jobDescription, targetDays = 30, skills = []) {
-        const response = await api.post('/roadmap/generate', {
-            jobDescription,
-            targetDays,
-            skills,
-        });
+    async generateRoadmap(request) {
+        const response = await api.post('/roadmap/generate', request);
+        return response.data;
+    },
+
+    async getRoadmapById(roadmapId) {
+        const response = await api.get(`/roadmap/${roadmapId}`);
         return response.data;
     },
 

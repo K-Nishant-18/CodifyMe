@@ -32,10 +32,10 @@ public class DailyTaskController {
         DailyTask task = dailyTaskRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Task not found"));
 
-        task.setIsCompleted(request.getIsCompleted());
+        task.setCompleted(request.getCompleted());
         dailyTaskRepository.save(task);
 
-        return ResponseEntity.ok("Task updated successfully");
+        return ResponseEntity.ok(task);
     }
 
     @PostMapping

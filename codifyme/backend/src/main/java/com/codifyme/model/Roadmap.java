@@ -24,8 +24,16 @@ public class Roadmap {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    private String title;
+
     @Column(nullable = false)
     private String jobTitle;
+
+    @Column(columnDefinition = "TEXT")
+    private String jobDescription;
+
+    @Column(columnDefinition = "TEXT")
+    private String aiGeneratedPlan;
 
     private LocalDate targetDate;
 

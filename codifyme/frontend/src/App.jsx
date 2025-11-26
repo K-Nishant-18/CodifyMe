@@ -99,6 +99,14 @@ function AppContent() {
             }
           />
           <Route
+            path="/roadmap/:id"
+            element={
+              <ProtectedRoute>
+                <RoadmapView />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/interview"
             element={
               <ProtectedRoute>

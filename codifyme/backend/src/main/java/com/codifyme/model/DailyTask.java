@@ -1,12 +1,18 @@
 package com.codifyme.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
 import java.time.LocalDateTime;
 
-@Data
 @Entity
 @Table(name = "daily_tasks")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DailyTask {
 
     @Id
@@ -17,20 +23,19 @@ public class DailyTask {
     @JoinColumn(name = "roadmap_id", nullable = false)
     private Roadmap roadmap;
 
-    @Column(name = "day_number", nullable = false)
     private Integer dayNumber;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String content;
+    @Column(nullable = false)
+    private String title;
 
-    @Column(name = "is_completed", nullable = false)
-    private Boolean isCompleted = false;
+    @Column(columnDefinition = "TEXT")
+    private String description;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(columnDefinition = "TEXT")
+    private String resources;
+
+    private Boolean completed = false;
+
+    @CreationTimestamp
     private LocalDateTime createdAt;
-
-    @PrePersist
-    protected void onCreate() {
-        createdAt = LocalDateTime.now();
-    }
 }

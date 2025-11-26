@@ -9,6 +9,9 @@ import java.util.List;
 @Data
 public class RoadmapGenerationRequest {
 
+    @NotBlank(message = "Title is required")
+    private String title;
+
     @NotBlank(message = "Job description is required")
     private String jobDescription;
 
