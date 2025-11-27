@@ -8,6 +8,7 @@ import LandingPage from './components/LandingPage';
 import Onboarding from './components/Onboarding';
 import Login from './components/Login';
 import CompanyIntelligence from './components/CompanyIntelligence';
+import Profile from './components/Profile';
 
 function AppContent() {
   const location = useLocation();
@@ -65,6 +66,13 @@ function AppContent() {
                 Companies
               </button>
             </Link>
+            <Link to="/profile">
+              <button
+                className={`px-4 py-2 font-bold border-2 border-black transition-all ${location.pathname === '/profile' ? 'bg-neo-main shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' : 'bg-white hover:bg-gray-100'}`}
+              >
+                Profile
+              </button>
+            </Link>
             {isAuthenticated && (
               <button
                 onClick={handleLogout}
@@ -119,6 +127,14 @@ function AppContent() {
             element={
               <ProtectedRoute>
                 <CompanyIntelligence />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             }
           />

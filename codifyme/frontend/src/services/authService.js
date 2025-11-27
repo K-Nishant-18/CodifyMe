@@ -10,8 +10,20 @@ const authService = {
         return response.data;
     },
 
-    async signup(email, password, fullName) {
-        const response = await api.post('/auth/signup', { email, password, fullName });
+    async signup(email, password, fullName, profileData = {}) {
+        const payload = {
+            email,
+            password,
+            fullName,
+            // Add profile fields if provided
+            targetCompany: profileData.targetCompany || null,
+            targetRole: profileData.targetRole || null,
+            deadline: profileData.deadline || null,
+            jobDescription: profileData.jobDescription || null,
+            experienceLevel: profileData.experienceLevel?.toUpperCase() || null
+        };
+
+        const response = await api.post('/auth/signup', payload);
         return response.data;
     },
 

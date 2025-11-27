@@ -2,7 +2,7 @@ package com.codifyme.controller;
 
 import com.codifyme.model.User;
 import com.codifyme.payload.response.CrackScoreResponse;
-import com.codifyme.payload.response.UserProfileResponse;
+import com.codifyme.payload.response.UserResponse;
 import com.codifyme.repository.UserRepository;
 import com.codifyme.security.services.UserDetailsImpl;
 import com.codifyme.service.CrackScoreService;
@@ -24,14 +24,14 @@ public class UserController {
     private CrackScoreService crackScoreService;
 
     @GetMapping("/profile")
-    public ResponseEntity<UserProfileResponse> getUserProfile() {
+    public ResponseEntity<UserResponse> getUserProfile() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
         User user = userRepository.findById(userDetails.getId())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        UserProfileResponse response = new UserProfileResponse(
+        UserResponse response = new UserResponse(
                 user.getId(),
                 user.getEmail(),
                 user.getFullName(),

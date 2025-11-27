@@ -3,11 +3,13 @@ package com.codifyme.controller;
 import com.codifyme.model.User;
 import com.codifyme.payload.request.LoginRequest;
 import com.codifyme.payload.request.SignupRequest;
+import com.codifyme.payload.request.UserProfileRequest;
 import com.codifyme.payload.response.JwtResponse;
 import com.codifyme.payload.response.MessageResponse;
 import com.codifyme.repository.UserRepository;
 import com.codifyme.security.jwt.JwtUtils;
 import com.codifyme.security.services.UserDetailsImpl;
+import com.codifyme.service.UserProfileService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +39,9 @@ public class AuthController {
   @Autowired
   JwtUtils jwtUtils;
 
+  @Autowired
+  UserProfileService userProfileService;
+
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
@@ -45,16 +50,16 @@ public class AuthController {
 
     SecurityContextHolder.getContext().setAuthentication(authentication);
     String jwt = jwtUtils.generateJwtToken(authentication);
-    
-    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();    
+
+    UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
     List<String> roles = userDetails.getAuthorities().stream()
         .map(item -> item.getAuthority())
         .collect(Collectors.toList());
 
-    return ResponseEntity.ok(new JwtResponse(jwt, 
-                         userDetails.getId(), 
-                         userDetails.getEmail(), 
-                         roles));
+    return ResponseEntity.ok(new JwtResponse(jwt,
+        userDetails.getId(),
+        userDetails.getEmail(),
+        roles));
   }
 
   @PostMapping("/signup")
@@ -71,7 +76,22 @@ public class AuthController {
     user.setPasswordHash(encoder.encode(signUpRequest.getPassword()));
     user.setFullName(signUpRequest.getFullName());
 
-    userRepository.save(user);
+    User savedUser = userRepository.save(user);
+
+    // Create user profile if profile data is provided
+    if (signUpRequest.getTargetCompany() != null ||
+        signUpRequest.getTargetRole() != null ||
+        signUpRequest.getExperienceLevel() != null) {
+
+      UserProfileRequest profileRequest = new UserProfileRequest();
+      profileRequest.setTargetCompany(signUpRequest.getTargetCompany());
+      profileRequest.setTargetRole(signUpRequest.getTargetRole());
+      profileRequest.setDeadline(signUpRequest.getDeadline());
+      profileRequest.setJobDescription(signUpRequest.getJobDescription());
+      profileRequest.setExperienceLevel(signUpRequest.getExperienceLevel());
+
+      userProfileService.createProfile(savedUser, profileRequest);
+    }
 
     return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
   }
