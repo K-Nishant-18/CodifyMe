@@ -305,7 +305,11 @@ const LandingPage = ({ onGetStarted }) => {
             </section>
 
             {/* Feature Comparison Table - DOODLE STYLE */}
-            <section className="py-20 px-4">
+            <section className="py-20 px-4" style={{
+                backgroundImage: "url('/paper.png')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+            }}>
                 <div className="max-w-5xl mx-auto">
                     <h2 className="font-display text-4xl md:text-6xl mb-12 uppercase text-center">
                         WHY <span className="bg-neo-green px-2">CODIFYME?</span>
@@ -313,7 +317,7 @@ const LandingPage = ({ onGetStarted }) => {
 
                     <div className="overflow-x-auto">
                         {/* Doodle Table Container */}
-                        <div className="relative p-8 bg-white" style={{
+                        <div className="relative p-8" style={{
                             clipPath: 'polygon(1% 3%, 3% 1%, 8% 2%, 15% 1%, 22% 3%, 30% 1%, 38% 2%, 46% 1%, 54% 3%, 62% 2%, 70% 1%, 78% 2%, 85% 1%, 92% 3%, 97% 2%, 99% 7%, 98% 15%, 99% 23%, 97% 31%, 99% 39%, 98% 47%, 99% 55%, 97% 63%, 98% 71%, 99% 79%, 97% 87%, 99% 93%, 96% 98%, 88% 97%, 80% 99%, 72% 98%, 64% 99%, 56% 97%, 48% 99%, 40% 98%, 32% 99%, 24% 97%, 16% 98%, 8% 99%, 3% 96%)',
                             border: '4px solid #000',
                             boxShadow: '8px 8px 0px rgba(0,0,0,0.3)'
@@ -327,13 +331,13 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </th>
-                                        <th className="p-4 text-center font-black text-lg relative bg-red-100">
+                                        <th className="p-4 text-center font-black text-lg relative">
                                             <div className="transform rotate-1">OLD WAY</div>
                                             <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '3,5' }}>
                                                 <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </th>
-                                        <th className="p-4 text-center font-black text-lg relative bg-neo-green">
+                                        <th className="p-4 text-center font-black text-lg relative">
                                             <div className="transform -rotate-1">CODIFYME</div>
                                             <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '3,5' }}>
                                                 <line x1="0" y1="0" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
@@ -350,7 +354,7 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-red-50">
+                                        <td className="p-4 text-center relative">
                                             <div className="inline-block transform -rotate-3 relative">
                                                 <X className="w-8 h-8 text-red-500" strokeWidth={3} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">NAH</div>
@@ -359,7 +363,7 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-green-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="inline-block transform rotate-2 relative">
                                                 <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">YEP!</div>
@@ -372,15 +376,15 @@ const LandingPage = ({ onGetStarted }) => {
 
                                     {/* Row 2 */}
                                     <tr className="relative">
-                                        <td className="p-4 font-bold relative">
+                                        <td className="p-3 font-bold relative">
                                             <div className="transform -rotate-1">AI Mock Interviews</div>
                                             <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
                                                 <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-red-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="transform rotate-2">
-                                                <span className="inline-block px-3 py-1 bg-gray-200 border-2 border-neo-black transform -rotate-1 font-semibold text-xs">
+                                                <span className="inline-block px-3 py-1 bg-transparent border-2 border-neo-black transform -rotate-1 font-semibold text-xs">
                                                     MAYBE 3?
                                                 </span>
                                             </div>
@@ -388,7 +392,7 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-green-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="inline-block transform -rotate-1 relative">
                                                 <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">∞</div>
@@ -401,15 +405,15 @@ const LandingPage = ({ onGetStarted }) => {
 
                                     {/* Row 3 */}
                                     <tr className="relative">
-                                        <td className="p-4 font-bold relative">
+                                        <td className="p-3 font-bold relative">
                                             <div className="transform rotate-1">Company Intelligence</div>
                                             <svg className="absolute bottom-0 left-0 w-full h-1" style={{ strokeDasharray: '4,6' }}>
                                                 <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-red-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="transform -rotate-2">
-                                                <span className="inline-block px-3 py-1 bg-gray-200 border-2 border-neo-black transform rotate-1 font-semibold text-xs">
+                                                <span className="inline-block px-3 py-1 bg-transparent border-2 border-neo-black transform rotate-1 font-semibold text-xs">
                                                     GOOGLE IT
                                                 </span>
                                             </div>
@@ -417,7 +421,7 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-green-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="inline-block transform rotate-2 relative">
                                                 <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">500+</div>
@@ -436,7 +440,7 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="0" x2="100%" y2="2" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-red-50">
+                                        <td className="p-4 text-center relative">
                                             <div className="inline-block transform rotate-3 relative">
                                                 <X className="w-8 h-8 text-red-500" strokeWidth={3} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">NAH</div>
@@ -445,7 +449,7 @@ const LandingPage = ({ onGetStarted }) => {
                                                 <line x1="0" y1="2" x2="100%" y2="0" stroke="#000" strokeWidth="2" />
                                             </svg>
                                         </td>
-                                        <td className="p-4 text-center relative bg-green-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="inline-block transform -rotate-2 relative">
                                                 <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">LIVE!</div>
@@ -461,13 +465,13 @@ const LandingPage = ({ onGetStarted }) => {
                                         <td className="p-4 font-bold relative">
                                             <div className="transform rotate-1">CrackScore Tracking</div>
                                         </td>
-                                        <td className="p-4 text-center relative bg-red-50">
+                                        <td className="p-3 text-center relative">
                                             <div className="inline-block transform -rotate-2 relative">
                                                 <X className="w-8 h-8 text-red-500" strokeWidth={3} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">NOPE</div>
                                             </div>
                                         </td>
-                                        <td className="p-4 text-center relative bg-green-50">
+                                        <td className="p-4 text-center relative">
                                             <div className="inline-block transform rotate-1 relative">
                                                 <Check className="w-8 h-8 text-green-600" strokeWidth={3.5} />
                                                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-xs font-bold">YEAH!</div>
@@ -480,8 +484,8 @@ const LandingPage = ({ onGetStarted }) => {
                     </div>
                 </div>
                 {/* Shorter divider */}
-                <div className="flex justify-center mt-16">
-                    <div className="w-3/4 h-1 bg-neo-black"></div>
+                <div className="flex justify-center mt-16 ">
+                    <div className="w-1/4 h-1 bg-white"></div>
                 </div>
             </section>
 
