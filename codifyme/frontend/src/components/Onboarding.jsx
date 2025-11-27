@@ -151,29 +151,27 @@ const Onboarding = ({ onComplete }) => {
                 </div>
 
                 {/* Testimonial / Social Proof */}
-                <div className="z-10 mt-12 bg-neo-white/10 backdrop-blur-sm border-2 border-neo-white/20 p-6 rounded-none">
-                    <div className="flex gap-1 mb-3">
-                        {[1, 2, 3, 4, 5].map(i => <Star key={i} className="w-5 h-5 text-neo-green fill-neo-green" />)}
-                    </div>
-                    <p className="italic mb-4">"This platform literally changed my life. Landed a job at Google in 3 months."</p>
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-neo-green rounded-full border-2 border-neo-white"></div>
-                        <div>
-                            <p className="font-bold text-sm">Alex Chen</p>
-                            <p className="text-xs text-gray-400">Software Engineer @ Google</p>
-                        </div>
-                    </div>
+                {/* Minimal Terminal Badge */}
+                <div className="z-10 mt-12 inline-flex items-center gap-2 px-4 py-2 bg-neo-black border-2 border-neo-green shadow-[4px_4px_0px_0px_rgba(34,197,94,0.5)]">
+                    <Terminal className="w-4 h-4 text-neo-green" />
+                    <span className="font-mono text-sm font-bold text-neo-white">
+                        <span className="text-neo-green mr-2">✨</span>
+                        JOB READY IN 90 DAYS<span className="animate-pulse">_</span>
+                    </span>
                 </div>
             </div>
 
             {/* RIGHT SIDE - FORM */}
             <div className="w-full md:w-7/12 bg-neo-bg p-8 md:p-12 flex flex-col justify-center relative">
-                {/* Paper texture overlay */}
-                <div className="absolute inset-0 opacity-50 pointer-events-none" style={{ backgroundImage: "url('/paper.png')", backgroundSize: 'cover' }}></div>
+                {/* Grid pattern overlay */}
+                <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+                    backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+                    backgroundSize: '50px 50px'
+                }}></div>
 
                 <div className="max-w-xl mx-auto w-full z-10">
                     {/* Progress Bar */}
-                    <div className="mb-12">
+                    {/* <div className="mb-12">
                         <div className="flex justify-between mb-2 text-sm font-bold uppercase tracking-wider">
                             <span className={step >= 1 ? "text-neo-black" : "text-gray-400"}>01. Identity</span>
                             <span className={step >= 2 ? "text-neo-black" : "text-gray-400"}>02. Goals</span>
@@ -184,7 +182,7 @@ const Onboarding = ({ onComplete }) => {
                                 style={{ width: step === 1 ? '50%' : '100%' }}
                             ></div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="bg-white border-4 border-neo-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 relative">
                         {/* Decorative corner */}

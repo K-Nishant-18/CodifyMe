@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Mail, Lock, ArrowRight, Terminal, Zap } from 'lucide-react';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -25,72 +26,157 @@ function Login() {
         }
     };
 
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-neo-black flex flex-col items-center justify-center p-8 font-mono text-neo-green">
+                <Terminal className="w-16 h-16 mb-6 animate-bounce" />
+                <h2 className="text-4xl font-black mb-4 uppercase animate-pulse">AUTHENTICATING...</h2>
+                <div className="w-64 h-3 bg-neo-black border-2 border-neo-green relative overflow-hidden">
+                    <div className="h-full bg-neo-green animate-pulse"></div>
+                </div>
+            </div>
+        );
+    }
+
     return (
-        <div className="min-h-screen bg-neo-bg flex items-center justify-center p-4">
-            <div className="w-full max-w-md">
-                {/* Logo/Title */}
-                <div className="text-center mb-8">
-                    <h1 className="text-5xl font-black uppercase tracking-tighter mb-2">CodifyMe</h1>
-                    <p className="text-lg font-bold">Welcome Back!</p>
+        <div className="min-h-screen flex font-mono overflow-hidden">
+            {/* LEFT SIDE - BRANDING */}
+            <div className="hidden md:flex md:w-5/12 bg-neo-black text-neo-white p-12 flex-col justify-between relative overflow-hidden">
+                {/* Animated grid background */}
+                <div className="absolute inset-0 opacity-20" style={{
+                    backgroundImage: 'radial-gradient(circle, #22c55e 1px, transparent 1px)',
+                    backgroundSize: '30px 30px'
+                }}></div>
+
+                <div className="z-10">
+                    <div className="flex items-center gap-2 mb-8">
+                        <div className="w-8 h-8 bg-neo-green border-2 border-neo-white"></div>
+                        <span className="font-black text-2xl tracking-tighter">CODIFYME</span>
+                    </div>
+                    <h1 className="text-6xl md:text-7xl font-black leading-none mb-6">
+                        WELCOME<br />
+                        <span className="text-neo-green">BACK</span><br />
+                        DEVELOPER
+                    </h1>
+                    <p className="text-xl font-bold text-gray-400 max-w-md">
+                        Continue your journey to becoming an elite software engineer.
+                    </p>
                 </div>
 
-                {/* Login Form */}
-                <div className="bg-white border-4 border-black p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-                    <h2 className="text-2xl font-black mb-6 uppercase">Login</h2>
+                {/* Stats/Features */}
+                <div className="z-10 grid grid-cols-3 gap-4">
+                    <div className="bg-neo-white/10 backdrop-blur-sm border-2 border-neo-white/20 p-4">
+                        <div className="text-3xl font-black text-neo-green">10K+</div>
+                        <div className="text-xs font-bold text-gray-400">USERS</div>
+                    </div>
+                    <div className="bg-neo-white/10 backdrop-blur-sm border-2 border-neo-white/20 p-4">
+                        <div className="text-3xl font-black text-neo-green">500+</div>
+                        <div className="text-xs font-bold text-gray-400">COMPANIES</div>
+                    </div>
+                    <div className="bg-neo-white/10 backdrop-blur-sm border-2 border-neo-white/20 p-4">
+                        <div className="text-3xl font-black text-neo-green">95%</div>
+                        <div className="text-xs font-bold text-gray-400">SUCCESS</div>
+                    </div>
+                </div>
+            </div>
 
-                    {error && (
-                        <div className="mb-4 p-3 bg-red-100 border-2 border-red-500 text-red-700 font-bold">
-                            {error}
+            {/* RIGHT SIDE - LOGIN FORM */}
+            <div className="w-full md:w-7/12 bg-neo-bg p-8 flex items-center justify-center relative">
+                {/* Grid pattern overlay */}
+                <div className="absolute inset-0 opacity-30 pointer-events-none" style={{
+                    backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+                    backgroundSize: '50px 50px'
+                }}></div>
+
+                <div className="w-full max-w-md z-10">
+                    {/* Mobile Logo */}
+                    <div className="md:hidden flex items-center justify-center gap-2 mb-8">
+                        <div className="w-8 h-8 bg-neo-green border-2 border-neo-black"></div>
+                        <span className="font-black text-2xl tracking-tighter">CODIFYME</span>
+                    </div>
+
+                    <div className="bg-white border-4 border-neo-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] p-8 md:p-10 relative">
+                        {/* Decorative corner */}
+                        <div className="absolute -top-3 -right-3 w-8 h-8 bg-neo-green border-2 border-neo-black z-20"></div>
+
+                        <div className="mb-8">
+                            <h2 className="text-3xl md:text-4xl font-black uppercase mb-2">Login</h2>
+                            <p className="text-gray-600 font-bold">Access your dashboard</p>
                         </div>
-                    )}
 
-                    <form onSubmit={handleSubmit}>
-                        <div className="mb-4">
-                            <label className="block font-bold mb-2" htmlFor="email">
-                                Email
-                            </label>
-                            <input
-                                id="email"
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                className="w-full px-4 py-3 border-2 border-black font-mono focus:outline-none focus:ring-2 focus:ring-neo-main"
-                                placeholder="your@email.com"
-                                required
-                            />
+                        {error && (
+                            <div className="mb-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 font-bold flex items-center gap-2 animate-shake">
+                                <Terminal className="w-5 h-5" />
+                                {error}
+                            </div>
+                        )}
+
+                        <form onSubmit={handleSubmit} className="space-y-5">
+                            <div className="group">
+                                <label className="block text-sm font-black uppercase mb-2 group-focus-within:text-neo-green transition-colors">
+                                    Email Address
+                                </label>
+                                <div className="relative">
+                                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-neo-black transition-colors" />
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full pl-12 pr-4 py-4 border-2 border-neo-black font-bold focus:outline-none focus:ring-4 focus:ring-neo-green/20 focus:border-neo-green transition-all bg-gray-50 focus:bg-white"
+                                        placeholder="dev@codifyme.com"
+                                        required
+                                        autoFocus
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="group">
+                                <label className="block text-sm font-black uppercase mb-2 group-focus-within:text-neo-green transition-colors">
+                                    Password
+                                </label>
+                                <div className="relative">
+                                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-neo-black transition-colors" />
+                                    <input
+                                        type="password"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        className="w-full pl-12 pr-4 py-4 border-2 border-neo-black font-bold focus:outline-none focus:ring-4 focus:ring-neo-green/20 focus:border-neo-green transition-all bg-gray-50 focus:bg-white"
+                                        placeholder="••••••••"
+                                        required
+                                    />
+                                </div>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full bg-neo-black text-neo-white border-2 border-neo-black py-4 font-black text-xl uppercase shadow-[6px_6px_0px_0px_#22c55e] hover:shadow-[3px_3px_0px_0px_#22c55e] hover:translate-x-[3px] hover:translate-y-[3px] transition-all flex items-center justify-center gap-2 group"
+                            >
+                                Login
+                                <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                        </form>
+
+                        <div className="mt-8 text-center">
+                            <p className="font-bold text-gray-600">
+                                Don't have an account?{' '}
+                                <Link to="/onboarding" className="text-neo-black underline decoration-2 decoration-neo-green hover:bg-neo-green transition-colors">
+                                    Sign Up
+                                </Link>
+                            </p>
                         </div>
 
-                        <div className="mb-6">
-                            <label className="block font-bold mb-2" htmlFor="password">
-                                Password
-                            </label>
-                            <input
-                                id="password"
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                className="w-full px-4 py-3 border-2 border-black font-mono focus:outline-none focus:ring-2 focus:ring-neo-main"
-                                placeholder="••••••••"
-                                required
-                            />
+                        {/* Quick Demo Access */}
+                        <div className="mt-6 pt-6 border-t-2 border-gray-200">
+                            <div className="bg-neo-green/10 border-2 border-neo-green p-4">
+                                <div className="flex items-center gap-2 mb-2">
+                                    <Zap className="w-5 h-5 text-neo-green" />
+                                    <span className="font-black text-sm uppercase">Quick Demo</span>
+                                </div>
+                                <p className="text-xs font-bold text-gray-600">
+                                    Use any email/password to test the app
+                                </p>
+                            </div>
                         </div>
-
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="w-full bg-neo-main border-2 border-black px-6 py-3 font-black uppercase shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            {loading ? 'Logging in...' : 'Login'}
-                        </button>
-                    </form>
-
-                    <div className="mt-6 text-center">
-                        <p className="font-bold">
-                            Don't have an account?{' '}
-                            <Link to="/onboarding" className="text-neo-main underline hover:no-underline">
-                                Sign Up
-                            </Link>
-                        </p>
                     </div>
                 </div>
             </div>
