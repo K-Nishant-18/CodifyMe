@@ -43,6 +43,10 @@ public class UserProfile {
     @Column(length = 50)
     private ExperienceLevel experienceLevel;
 
+    private int currentStreak = 0;
+
+    private LocalDate lastActivityDate;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 

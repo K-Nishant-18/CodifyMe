@@ -19,4 +19,5 @@ public class UserProfileResponse {
     private String resumePath;
     private String jobDescription;
     private ExperienceLevel experienceLevel;
+    private int currentStreak;
 }

@@ -7,4 +7,6 @@ public interface AIService {
     String generateRoadmapPlan(RoadmapGenerationRequest request);
 
     String generateInterviewFeedback(String transcript, String jobRole);
+
+    String analyzeResume(String resumeContent);
 }

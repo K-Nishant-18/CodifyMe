@@ -50,7 +50,30 @@ public class UserProfileServiceImpl implements UserProfileService {
         UserProfile profile = userProfileRepository.findByUserId(userId)
                 .orElseThrow(() -> new RuntimeException("Profile not found for user: " + userId));
 
+        // Update streak on profile access (simple gamification)
+        updateStreak(profile);
+
         return mapToResponse(profile);
+    }
+
+    private void updateStreak(UserProfile profile) {
+        java.time.LocalDate today = java.time.LocalDate.now();
+        java.time.LocalDate lastActivity = profile.getLastActivityDate();
+
+        if (lastActivity == null) {
+            profile.setCurrentStreak(1);
+            profile.setLastActivityDate(today);
+        } else if (lastActivity.equals(today.minusDays(1))) {
+            profile.setCurrentStreak(profile.getCurrentStreak() + 1);
+            profile.setLastActivityDate(today);
+        } else if (lastActivity.isBefore(today.minusDays(1))) {
+            profile.setCurrentStreak(1);
+            profile.setLastActivityDate(today);
+        } else if (lastActivity.equals(today)) {
+            // Already active today, do nothing
+        }
+
+        userProfileRepository.save(profile);
     }
 
     private UserProfileResponse mapToResponse(UserProfile profile) {
@@ -62,6 +85,7 @@ public class UserProfileServiceImpl implements UserProfileService {
         response.setResumePath(profile.getResumePath());
         response.setJobDescription(profile.getJobDescription());
         response.setExperienceLevel(profile.getExperienceLevel());
+        response.setCurrentStreak(profile.getCurrentStreak());
         return response;
     }
 }

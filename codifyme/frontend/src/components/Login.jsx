@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { Mail, Lock, ArrowRight, Terminal, Zap } from 'lucide-react';
+import { Mail, Lock, ArrowRight, Terminal, Zap, Home } from 'lucide-react';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -39,7 +39,11 @@ function Login() {
     }
 
     return (
-        <div className="min-h-screen flex font-mono overflow-hidden">
+        <div className="min-h-screen flex font-mono overflow-hidden relative">
+            {/* Home Button */}
+            <Link to="/" className="absolute top-6 right-7 z-50 bg-red-500 border-2 border-neo-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all group">
+                <Home className="w-6 h-6 text-neo-black group-hover:text-neo-green transition-colors" />
+            </Link>
             {/* LEFT SIDE - BRANDING */}
             <div className="hidden md:flex md:w-5/12 bg-neo-black text-neo-white p-12 flex-col justify-between relative overflow-hidden">
                 {/* Animated grid background */}
