@@ -55,6 +55,16 @@ public class RoadmapController {
                     response.setTargetDate(roadmap.getTargetDate());
                     response.setAiGeneratedPlan(roadmap.getAiGeneratedPlan());
                     response.setStatus(roadmap.getStatus().toString());
+
+                    // Calculate completion percentage
+                    List<DailyTask> tasks = dailyTaskRepository.findByRoadmapId(roadmap.getId());
+                    if (!tasks.isEmpty()) {
+                        long completedCount = tasks.stream().filter(DailyTask::isCompleted).count();
+                        response.setCompletionPercentage((double) completedCount / tasks.size() * 100);
+                    } else {
+                        response.setCompletionPercentage(0.0);
+                    }
+
                     return response;
                 })
                 .collect(java.util.stream.Collectors.toList());
@@ -83,6 +93,15 @@ public class RoadmapController {
         response.setTargetDate(roadmap.getTargetDate());
         response.setAiGeneratedPlan(roadmap.getAiGeneratedPlan());
         response.setStatus(roadmap.getStatus().toString());
+
+        // Calculate completion percentage
+        List<DailyTask> tasks = dailyTaskRepository.findByRoadmapId(roadmap.getId());
+        if (!tasks.isEmpty()) {
+            long completedCount = tasks.stream().filter(DailyTask::isCompleted).count();
+            response.setCompletionPercentage((double) completedCount / tasks.size() * 100);
+        } else {
+            response.setCompletionPercentage(0.0);
+        }
 
         return ResponseEntity.ok(response);
     }
@@ -162,6 +181,7 @@ public class RoadmapController {
             response.setTargetDate(roadmap.getTargetDate());
             response.setAiGeneratedPlan(roadmap.getAiGeneratedPlan());
             response.setStatus(roadmap.getStatus().toString());
+            response.setCompletionPercentage(0.0); // New roadmap starts at 0%
 
             return ResponseEntity.ok(response);
         } catch (Exception e) {

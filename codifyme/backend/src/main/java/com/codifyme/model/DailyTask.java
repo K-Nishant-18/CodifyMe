@@ -34,7 +34,7 @@ public class DailyTask {
     @Column(columnDefinition = "TEXT")
     private String resources;
 
-    private Boolean completed = false;
+    private boolean completed = false;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

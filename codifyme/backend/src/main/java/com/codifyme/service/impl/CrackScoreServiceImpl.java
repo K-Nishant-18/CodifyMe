@@ -85,7 +85,7 @@ public class CrackScoreServiceImpl implements CrackScoreService {
         for (var roadmap : roadmaps) {
             var tasks = dailyTaskRepository.findByRoadmapId(roadmap.getId());
             totalTasks += tasks.size();
-            completedTasks += (int) tasks.stream().filter(t -> t.getCompleted()).count();
+            completedTasks += (int) tasks.stream().filter(t -> t.isCompleted()).count();
         }
 
         if (totalTasks == 0)

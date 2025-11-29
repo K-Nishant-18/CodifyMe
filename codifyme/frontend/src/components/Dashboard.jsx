@@ -141,9 +141,12 @@ const Dashboard = () => {
                                         </span>
                                     </div>
                                     <div className="w-full bg-gray-200 h-2 border border-black">
-                                        <div className="bg-black h-full w-1/3 group-hover:w-1/2 transition-all duration-500"></div>
+                                        <div
+                                            className="bg-black h-full group-hover:opacity-80 transition-all duration-500"
+                                            style={{ width: `${roadmap.completionPercentage || 0}%` }}
+                                        ></div>
                                     </div>
-                                    <p className="text-xs font-bold mt-1 text-right">33% COMPLETE</p>
+                                    <p className="text-xs font-bold mt-1 text-right">{Math.round(roadmap.completionPercentage || 0)}% COMPLETE</p>
                                 </div>
                             ))
                         ) : (
@@ -165,7 +168,7 @@ const Dashboard = () => {
                                 <div key={interview.id} className="flex items-center justify-between border-b-2 border-black pb-2 last:border-0">
                                     <div className="flex items-center gap-3">
                                         <div className={`w-8 h-8 flex items-center justify-center border-2 border-black font-black ${interview.score >= 80 ? 'bg-green-400' :
-                                                interview.score >= 60 ? 'bg-yellow-400' : 'bg-red-400'
+                                            interview.score >= 60 ? 'bg-yellow-400' : 'bg-red-400'
                                             }`}>
                                             {interview.score}
                                         </div>

@@ -4,6 +4,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard';
 import RoadmapView from './components/RoadmapView';
 import InterviewSimulator from './components/InterviewSimulator';
+import InterviewHistory from './components/InterviewHistory';
 import LandingPage from './components/LandingPage';
 import Onboarding from './components/Onboarding';
 import Login from './components/Login';
@@ -135,6 +136,14 @@ function AppContent() {
             element={
               <ProtectedRoute>
                 <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/interview/history"
+            element={
+              <ProtectedRoute>
+                <InterviewHistory />
               </ProtectedRoute>
             }
           />

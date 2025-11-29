@@ -16,4 +16,5 @@ public class RoadmapResponse {
     private LocalDate targetDate;
     private String aiGeneratedPlan;
     private String status;
+    private double completionPercentage;
 }
