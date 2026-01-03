@@ -30,6 +30,12 @@ public class User {
 
     private Integer crackScore = 0;
 
+    private Integer dayStreak = 0;
+
+    private Integer tasksCompleted = 0;
+
+    private Integer interviewsCompleted = 0;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
 
