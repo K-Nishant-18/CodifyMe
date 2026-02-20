@@ -1,0 +1,18 @@
+# Git / version control
+.git
+.gitignore
+
+# IDE files
+.idea
+*.iml
+
+# Maven build output (builder stage copies from Maven cache, not target/)
+target/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env files (never send to Docker)
+*.env
+.env*

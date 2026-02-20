@@ -1,5 +1,5 @@
--- Seed data for companies table
-USE codifyme;
+-- Seed data for companies table (PostgreSQL)
+-- Run this AFTER schema.sql against your Render PostgreSQL database
 
 INSERT INTO companies (name, logo_url, description, difficulty_level) VALUES
 ('Google', 'https://logo.clearbit.com/google.com', 'Leading technology company specializing in Internet-related services and products', 'Hard'),
@@ -31,4 +31,5 @@ INSERT INTO companies (name, logo_url, description, difficulty_level) VALUES
 ('GitHub', 'https://logo.clearbit.com/github.com', 'Platform for version control and collaboration for software developers', 'Easy'),
 ('Reddit', 'https://logo.clearbit.com/reddit.com', 'Social news aggregation and discussion website', 'Medium'),
 ('Pinterest', 'https://logo.clearbit.com/pinterest.com', 'Image sharing and social media service for discovering ideas', 'Easy'),
-('Twitch', 'https://logo.clearbit.com/twitch.tv', 'Live streaming platform focused on video game streaming and esports', 'Medium');
+('Twitch', 'https://logo.clearbit.com/twitch.tv', 'Live streaming platform focused on video game streaming and esports', 'Medium')
+ON CONFLICT DO NOTHING;
